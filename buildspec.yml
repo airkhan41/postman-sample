@@ -6,8 +6,8 @@ phases:
       - npm install -g newman
   build:
     commands:
-      - newman run -r html,cli sample_service.postman_collection --reporter-htmlextra-export postmantestresults/report/report.html
+      - newman run -r html,cli sample_service.postman_collection --reporter-htmlextra-export report.html
 
 artifacts:
   files:
-    - postmantestresults/report/report.html
+    - ./report/report.html
