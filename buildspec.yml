@@ -3,7 +3,7 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - npm install latest-version
+      - npm install newman latest-version
       - npm install -g newman-reporter-htmlextra
   build:
     commands:
