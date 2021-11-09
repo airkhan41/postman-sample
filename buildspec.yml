@@ -6,8 +6,8 @@ phases:
       - npm install newman --global
   build:
     commands:
-      - newman run -r html,cli sample_service.postman_collection --reporter-html-export postman-sample/postmantestresults/report.html
+      - newman run -r html,cli sample_service.postman_collection --reporter-html-export report.html
 
 artifacts:
   files:
-    - 'postman-sample/postmantestresults/report.html'
+    - report.html
