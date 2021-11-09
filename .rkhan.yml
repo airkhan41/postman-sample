@@ -6,4 +6,4 @@ before_script:
   - npm install -g newman
 
 script:
-  - newman run DSS_API_Status_Testing.postman_collection
+  - newman run sample_service.postman_collection
