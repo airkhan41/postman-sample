@@ -5,8 +5,8 @@ node_js:
 phases:
   pre_build:
     commands:
-      - npm install latest-version@7.0.0
-      - npm install -g newman latest-version@7.0.0
+      - npm install latest-version@6.0.0
+      - npm install -g newman latest-version@6.0.0
       - npm install -g js-yaml
       - npm install -g newman-reporter-htmlextra@1.22.3
   build:
