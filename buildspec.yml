@@ -1,7 +1,9 @@
 version: 0.2
-node_js: 17.0.1
 
 phases:
+  install:
+    runtime-versions:
+      nodejs: 16.13.0
   pre_build:
     commands:
       - npm install -g newman
@@ -9,7 +11,7 @@ phases:
   build:
     commands:
       ##- newman run -r html,cli sample_service.postman_collection --reporter-htmlextra-export report.html
-      - newman run sample_service.postman_collection -r htmlextra --reporter-htmlextra-export report.html
+      - newman run DSS_API_Status_Testing.postman_collection -r htmlextra --reporter-htmlextra-export report.html
 
 artifacts:
   files:

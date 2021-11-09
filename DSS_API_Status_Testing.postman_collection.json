@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "74760daa-3d68-499c-b2b8-2e49328425f5",
+		"name": "DSS_API_Status_Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MES-16283 & 8424- 200 OK",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body is correct\", function () { ",
+							"    pm.response.to.have.body('\"Message Sent Successfully\"');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"referralRecord\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"CURAM_REFERRAL_ID\",\r\n                \"value\": \"0000000031\"\r\n            }\r\n        ],\r\n        \"dateReferredtoPacss\": \"2022-10-08\",\r\n        \"referralType\": \"I\",\r\n        \"assignmentOfRightsDate\": \"2022-11-30\"\r\n    },\r\n    \"custodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000002\"\r\n            },\r\n            {\r\n                \"type\": \"MEDICAID_ID\",\r\n                \"value\": \"0000000002\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Khan\",\r\n            \"firstName\": \"Ramez\",\r\n            \"dateOfBirth\": \"1978-08-23\",\r\n            \"middleName\": \"Airkhan\",\r\n            \"suffix\": \"Sr.\",\r\n            \"alias\": \"NONE\",\r\n            \"nickName\": \"Black Mamba\",\r\n            \"maidenName\": \"NONE\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Philadelphia\",\r\n            \"stateOfbirth\": \"PA\",\r\n            \"gender\": \"M\"\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"county\": \"10\",\r\n            \"addressType\": \"HOME\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        },\r\n        \"employmentInfo\": {\r\n            \"employerName\": \"Sonoco\",\r\n            \"employerAddress\": {\r\n                \"addressLine1\": \"CP Employer Address Line1\",\r\n                \"city\": \"CP Employer Address City\",\r\n                \"state\": \"CP Employer Address State\",\r\n                \"zip\": \"CP Employer Address ZIP\"\r\n            },\r\n            \"workShift\": \"8 hours a day\",\r\n            \"country\": \"US\",\r\n            \"monthlySalary\": 5000,\r\n            \"usualOccupation\": \"Plant Safety Coordinator\"\r\n        },\r\n        \"currentMarriageInfo\": {\r\n            \"spouseLastName\": \"Bryant\",\r\n            \"spouseFirstName\": \"Vanessa\",\r\n            \"spouseMiddleName\": \"Cornejo\",\r\n            \"spouseSuffix\": \"\",\r\n            \"dateOfMarriage\": \"2001-04-18\",\r\n            \"marriageCity\": \"Los Angeles\",\r\n            \"marriageState\": \"CA\",\r\n            \"dateOfDivorce\": \"2020-01-26\"\r\n        }\r\n    },\r\n    \"dependentChildren\": [\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"000000003\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"0000000003\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Natalia\",\r\n                \"dateOfBirth\": \"2003-01-19\",\r\n                \"middleName\": \"Diamante\",\r\n                \"suffix\": \"Jr.\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"Black Mamba JR\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Los Angeles\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 9,\r\n                \"weight_lbs\": 115,\r\n                \"hairColor\": \"BN\"\r\n            },\r\n            \"paternityEstablishedIndicator\": \"N\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName\": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"N\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        },\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"247425280\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"5987841144\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Gianna \",\r\n                \"dateOfBirth\": \"2006-05-01\",\r\n                \"middleName\": \"Maria-Onore\",\r\n                \"suffix\": \"\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Orange County\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 5\r\n            },\r\n            \"paternityEstablishedIndicator\": \"Y\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName \": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\",\r\n                \"dateOfMarriage\": \"2001-04-18\",\r\n                \"marriageCity\": \"Los Angeles\",\r\n                \"marriageState\": \"CA\",\r\n                \"dateOfDivorce\": \"2020-01-26\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"Y\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        }\r\n    ],\r\n    \"nonCustodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000004\"\r\n            },\r\n            {\r\n                \"type\": \"PACSS_MEMBER_ID\",\r\n                \"value\": \"0000000004\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Bryant\",\r\n            \"firstName\": \"Pamela\",\r\n            \"dateOfBirth\": \"1954-08-03\",\r\n            \"middleName\": \"Cox\",\r\n            \"suffix\": \"\",\r\n            \"alias\": \"\",\r\n            \"nickName\": \"\",\r\n            \"maidenName\": \"Adele Anderson\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Los Angeles\",\r\n            \"stateOfbirth\": \"CA\",\r\n            \"gender\": \"F\",\r\n            \"race\": \"02\",\r\n            \"currentMaritalStatus\": \"X\",\r\n            \"height_feet\": 5,\r\n            \"height_inches\": 5,\r\n            \"weight_lbs\": 156\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"addressType\": \"HOME\",\r\n            \"county\": \"10\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://dss.dev.scdhhs.online/referral",
+					"protocol": "https",
+					"host": [
+						"dss",
+						"dev",
+						"scdhhs",
+						"online"
+					],
+					"path": [
+						"referral"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MES-16283 - 400 Bad Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body('{\"message\":  \"Invalid request body\", \"type\":BAD_REQUEST_BODY, \"statusCode\": \\'400\\', \"hint\": \"Please fix and resubmit\"}');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"referralRecord\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"CURAM_REFERRAL_ID\",\r\n                \"value\": \"0000000031\"\r\n            }\r\n        ],,\r\n        \"dateReferredtoPacss\": \"2022-10-08\",\r\n        \"referralType\": \"I\",\r\n        \"assignmentOfRightsDate\": \"2022-11-30\"\r\n    },\r\n    \"custodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000002\"\r\n            },\r\n            {\r\n                \"type\": \"MEDICAID_ID\",\r\n                \"value\": \"0000000002\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Khan\",\r\n            \"firstName\": \"Ramez\",\r\n            \"dateOfBirth\": \"1978-08-23\",\r\n            \"middleName\": \"Airkhan\",\r\n            \"suffix\": \"Sr.\",\r\n            \"alias\": \"NONE\",\r\n            \"nickName\": \"Black Mamba\",\r\n            \"maidenName\": \"NONE\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Philadelphia\",\r\n            \"stateOfbirth\": \"PA\",\r\n            \"gender\": \"M\"\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"county\": \"10\",\r\n            \"addressType\": \"HOME\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        },\r\n        \"employmentInfo\": {\r\n            \"employerName\": \"Sonoco\",\r\n            \"employerAddress\": {\r\n                \"addressLine1\": \"CP Employer Address Line1\",\r\n                \"city\": \"CP Employer Address City\",\r\n                \"state\": \"CP Employer Address State\",\r\n                \"zip\": \"CP Employer Address ZIP\"\r\n            },\r\n            \"workShift\": \"8 hours a day\",\r\n            \"country\": \"US\",\r\n            \"monthlySalary\": 5000,\r\n            \"usualOccupation\": \"Plant Safety Coordinator\"\r\n        },\r\n        \"currentMarriageInfo\": {\r\n            \"spouseLastName\": \"Bryant\",\r\n            \"spouseFirstName\": \"Vanessa\",\r\n            \"spouseMiddleName\": \"Cornejo\",\r\n            \"spouseSuffix\": \"\",\r\n            \"dateOfMarriage\": \"2001-04-18\",\r\n            \"marriageCity\": \"Los Angeles\",\r\n            \"marriageState\": \"CA\",\r\n            \"dateOfDivorce\": \"2020-01-26\"\r\n        }\r\n    },\r\n    \"dependentChildren\": [\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"000000003\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"0000000003\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Natalia\",\r\n                \"dateOfBirth\": \"2003-01-19\",\r\n                \"middleName\": \"Diamante\",\r\n                \"suffix\": \"Jr.\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"Black Mamba JR\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Los Angeles\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 9,\r\n                \"weight_lbs\": 115,\r\n                \"hairColor\": \"BN\"\r\n            },\r\n            \"paternityEstablishedIndicator\": \"N\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName\": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"N\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        },\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"247425280\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"5987841144\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Gianna \",\r\n                \"dateOfBirth\": \"2006-05-01\",\r\n                \"middleName\": \"Maria-Onore\",\r\n                \"suffix\": \"\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Orange County\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 5\r\n            },\r\n            \"paternityEstablishedIndicator\": \"Y\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName \": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\",\r\n                \"dateOfMarriage\": \"2001-04-18\",\r\n                \"marriageCity\": \"Los Angeles\",\r\n                \"marriageState\": \"CA\",\r\n                \"dateOfDivorce\": \"2020-01-26\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"Y\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        }\r\n    ],\r\n    \"nonCustodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000004\"\r\n            },\r\n            {\r\n                \"type\": \"PACSS_MEMBER_ID\",\r\n                \"value\": \"0000000004\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Bryant\",\r\n            \"firstName\": \"Pamela\",\r\n            \"dateOfBirth\": \"1954-08-03\",\r\n            \"middleName\": \"Cox\",\r\n            \"suffix\": \"\",\r\n            \"alias\": \"\",\r\n            \"nickName\": \"\",\r\n            \"maidenName\": \"Adele Anderson\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Los Angeles\",\r\n            \"stateOfbirth\": \"CA\",\r\n            \"gender\": \"F\",\r\n            \"race\": \"02\",\r\n            \"currentMaritalStatus\": \"X\",\r\n            \"height_feet\": 5,\r\n            \"height_inches\": 5,\r\n            \"weight_lbs\": 156\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"addressType\": \"HOME\",\r\n            \"county\": \"10\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/referral",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"referral"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MES-16814 - 400 Bad Request - Invalid Request Body Data Format Posted through API Gateway",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body('{\"message\":  \"Invalid request body\", \"type\":BAD_REQUEST_BODY, \"statusCode\": \\'400\\', \"hint\": \"Please fix and resubmit\"}');\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"key1\": \"value1\",\r\n  \"key2\": \"value2\",\r\n  \"key3\": \"value3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "javascript"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/referral",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"referral"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MES-16283 - 401 Unauthorized",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body('{\"message\": \"Unauthorized\", \"type\":UNAUTHORIZED, \"statusCode\": \\'401\\', \"hint\": \"Please fix and resubmit\"}');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"referralRecord\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"CURAM_REFERRAL_ID\",\r\n                \"value\": \"0000000031\"\r\n            }\r\n        ],\r\n        \"dateReferredtoPacss\": \"2022-10-08\",\r\n        \"referralType\": \"I\",\r\n        \"assignmentOfRightsDate\": \"2022-11-30\"\r\n    },\r\n    \"custodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000002\"\r\n            },\r\n            {\r\n                \"type\": \"MEDICAID_ID\",\r\n                \"value\": \"0000000002\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Khan\",\r\n            \"firstName\": \"Ramez\",\r\n            \"dateOfBirth\": \"1978-08-23\",\r\n            \"middleName\": \"Airkhan\",\r\n            \"suffix\": \"Sr.\",\r\n            \"alias\": \"NONE\",\r\n            \"nickName\": \"Black Mamba\",\r\n            \"maidenName\": \"NONE\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Philadelphia\",\r\n            \"stateOfbirth\": \"PA\",\r\n            \"gender\": \"M\"\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"county\": \"10\",\r\n            \"addressType\": \"HOME\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        },\r\n        \"employmentInfo\": {\r\n            \"employerName\": \"Sonoco\",\r\n            \"employerAddress\": {\r\n                \"addressLine1\": \"CP Employer Address Line1\",\r\n                \"city\": \"CP Employer Address City\",\r\n                \"state\": \"CP Employer Address State\",\r\n                \"zip\": \"CP Employer Address ZIP\"\r\n            },\r\n            \"workShift\": \"8 hours a day\",\r\n            \"country\": \"US\",\r\n            \"monthlySalary\": 5000,\r\n            \"usualOccupation\": \"Plant Safety Coordinator\"\r\n        },\r\n        \"currentMarriageInfo\": {\r\n            \"spouseLastName\": \"Bryant\",\r\n            \"spouseFirstName\": \"Vanessa\",\r\n            \"spouseMiddleName\": \"Cornejo\",\r\n            \"spouseSuffix\": \"\",\r\n            \"dateOfMarriage\": \"2001-04-18\",\r\n            \"marriageCity\": \"Los Angeles\",\r\n            \"marriageState\": \"CA\",\r\n            \"dateOfDivorce\": \"2020-01-26\"\r\n        }\r\n    },\r\n    \"dependentChildren\": [\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"000000003\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"0000000003\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Natalia\",\r\n                \"dateOfBirth\": \"2003-01-19\",\r\n                \"middleName\": \"Diamante\",\r\n                \"suffix\": \"Jr.\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"Black Mamba JR\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Los Angeles\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 9,\r\n                \"weight_lbs\": 115,\r\n                \"hairColor\": \"BN\"\r\n            },\r\n            \"paternityEstablishedIndicator\": \"N\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName\": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"N\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        },\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"247425280\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"5987841144\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Gianna \",\r\n                \"dateOfBirth\": \"2006-05-01\",\r\n                \"middleName\": \"Maria-Onore\",\r\n                \"suffix\": \"\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Orange County\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 5\r\n            },\r\n            \"paternityEstablishedIndicator\": \"Y\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName \": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\",\r\n                \"dateOfMarriage\": \"2001-04-18\",\r\n                \"marriageCity\": \"Los Angeles\",\r\n                \"marriageState\": \"CA\",\r\n                \"dateOfDivorce\": \"2020-01-26\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"Y\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        }\r\n    ],\r\n    \"nonCustodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000004\"\r\n            },\r\n            {\r\n                \"type\": \"PACSS_MEMBER_ID\",\r\n                \"value\": \"0000000004\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Bryant\",\r\n            \"firstName\": \"Pamela\",\r\n            \"dateOfBirth\": \"1954-08-03\",\r\n            \"middleName\": \"Cox\",\r\n            \"suffix\": \"\",\r\n            \"alias\": \"\",\r\n            \"nickName\": \"\",\r\n            \"maidenName\": \"Adele Anderson\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Los Angeles\",\r\n            \"stateOfbirth\": \"CA\",\r\n            \"gender\": \"F\",\r\n            \"race\": \"02\",\r\n            \"currentMaritalStatus\": \"X\",\r\n            \"height_feet\": 5,\r\n            \"height_inches\": 5,\r\n            \"weight_lbs\": 156\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"addressType\": \"HOME\",\r\n            \"county\": \"10\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/referral",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"referral"
+					]
+				},
+				"description": "DSS API Testing"
+			},
+			"response": []
+		},
+		{
+			"name": "MES-16283 - 401 Unauthorized - The incoming token has expired",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body('{\"message\": \"The incoming token has expired\", \"type\":UNAUTHORIZED, \"statusCode\": \\'401\\', \"hint\": \"Please fix and resubmit\"}');",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "clientSecret",
+							"value": "1q36gphgamcgijg7geqoemt5n0upctcodcb92slfht8k9l2tsa0t",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "6s5qq0f27alv5go0ku01kr9e1s",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "https://mes-dss-domain-main.auth.us-east-1.amazoncognito.com/oauth2/token",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"referralRecord\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"CURAM_REFERRAL_ID\",\r\n                \"value\": \"0000000031\"\r\n            }\r\n        ],\r\n        \"dateReferredtoPacss\": \"2022-10-08\",\r\n        \"referralType\": \"I\",\r\n        \"assignmentOfRightsDate\": \"2022-11-30\"\r\n    },\r\n    \"custodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000002\"\r\n            },\r\n            {\r\n                \"type\": \"MEDICAID_ID\",\r\n                \"value\": \"0000000002\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Khan\",\r\n            \"firstName\": \"Ramez\",\r\n            \"dateOfBirth\": \"1978-08-23\",\r\n            \"middleName\": \"Airkhan\",\r\n            \"suffix\": \"Sr.\",\r\n            \"alias\": \"NONE\",\r\n            \"nickName\": \"Black Mamba\",\r\n            \"maidenName\": \"NONE\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Philadelphia\",\r\n            \"stateOfbirth\": \"PA\",\r\n            \"gender\": \"M\"\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"county\": \"10\",\r\n            \"addressType\": \"HOME\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        },\r\n        \"employmentInfo\": {\r\n            \"employerName\": \"Sonoco\",\r\n            \"employerAddress\": {\r\n                \"addressLine1\": \"CP Employer Address Line1\",\r\n                \"city\": \"CP Employer Address City\",\r\n                \"state\": \"CP Employer Address State\",\r\n                \"zip\": \"CP Employer Address ZIP\"\r\n            },\r\n            \"workShift\": \"8 hours a day\",\r\n            \"country\": \"US\",\r\n            \"monthlySalary\": 5000,\r\n            \"usualOccupation\": \"Plant Safety Coordinator\"\r\n        },\r\n        \"currentMarriageInfo\": {\r\n            \"spouseLastName\": \"Bryant\",\r\n            \"spouseFirstName\": \"Vanessa\",\r\n            \"spouseMiddleName\": \"Cornejo\",\r\n            \"spouseSuffix\": \"\",\r\n            \"dateOfMarriage\": \"2001-04-18\",\r\n            \"marriageCity\": \"Los Angeles\",\r\n            \"marriageState\": \"CA\",\r\n            \"dateOfDivorce\": \"2020-01-26\"\r\n        }\r\n    },\r\n    \"dependentChildren\": [\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"000000003\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"0000000003\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Natalia\",\r\n                \"dateOfBirth\": \"2003-01-19\",\r\n                \"middleName\": \"Diamante\",\r\n                \"suffix\": \"Jr.\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"Black Mamba JR\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Los Angeles\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 9,\r\n                \"weight_lbs\": 115,\r\n                \"hairColor\": \"BN\"\r\n            },\r\n            \"paternityEstablishedIndicator\": \"N\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName\": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"N\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        },\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"247425280\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"5987841144\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Gianna \",\r\n                \"dateOfBirth\": \"2006-05-01\",\r\n                \"middleName\": \"Maria-Onore\",\r\n                \"suffix\": \"\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Orange County\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 5\r\n            },\r\n            \"paternityEstablishedIndicator\": \"Y\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName \": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\",\r\n                \"dateOfMarriage\": \"2001-04-18\",\r\n                \"marriageCity\": \"Los Angeles\",\r\n                \"marriageState\": \"CA\",\r\n                \"dateOfDivorce\": \"2020-01-26\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"Y\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        }\r\n    ],\r\n    \"nonCustodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000004\"\r\n            },\r\n            {\r\n                \"type\": \"PACSS_MEMBER_ID\",\r\n                \"value\": \"0000000004\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Bryant\",\r\n            \"firstName\": \"Pamela\",\r\n            \"dateOfBirth\": \"1954-08-03\",\r\n            \"middleName\": \"Cox\",\r\n            \"suffix\": \"\",\r\n            \"alias\": \"\",\r\n            \"nickName\": \"\",\r\n            \"maidenName\": \"Adele Anderson\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Los Angeles\",\r\n            \"stateOfbirth\": \"CA\",\r\n            \"gender\": \"F\",\r\n            \"race\": \"02\",\r\n            \"currentMaritalStatus\": \"X\",\r\n            \"height_feet\": 5,\r\n            \"height_inches\": 5,\r\n            \"weight_lbs\": 156\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"addressType\": \"HOME\",\r\n            \"county\": \"10\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/referral",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"referral"
+					]
+				},
+				"description": "DSS API Testing"
+			},
+			"response": []
+		},
+		{
+			"name": "MES-16283 - 403 Forbidden Error is simply inputting an incorrect URL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 403\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body('{\"message\": \"Missing Authentication Token\", \"type\":MISSING_AUTHENTICATION_TOKEN, \"statusCode\": \\'403\\', \"hint\": \"Please fix and resubmit\"}');",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"referralRecord\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"CURAM_REFERRAL_ID\",\r\n                \"value\": \"0000000031\"\r\n            }\r\n        ],\r\n        \"dateReferredtoPacss\": \"2022-10-08\",\r\n        \"referralType\": \"I\",\r\n        \"assignmentOfRightsDate\": \"2022-11-30\"\r\n    },\r\n    \"custodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000002\"\r\n            },\r\n            {\r\n                \"type\": \"MEDICAID_ID\",\r\n                \"value\": \"0000000002\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Khan\",\r\n            \"firstName\": \"Ramez\",\r\n            \"dateOfBirth\": \"1978-08-23\",\r\n            \"middleName\": \"Airkhan\",\r\n            \"suffix\": \"Sr.\",\r\n            \"alias\": \"NONE\",\r\n            \"nickName\": \"Black Mamba\",\r\n            \"maidenName\": \"NONE\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Philadelphia\",\r\n            \"stateOfbirth\": \"PA\",\r\n            \"gender\": \"M\"\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"county\": \"10\",\r\n            \"addressType\": \"HOME\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        },\r\n        \"employmentInfo\": {\r\n            \"employerName\": \"Sonoco\",\r\n            \"employerAddress\": {\r\n                \"addressLine1\": \"CP Employer Address Line1\",\r\n                \"city\": \"CP Employer Address City\",\r\n                \"state\": \"CP Employer Address State\",\r\n                \"zip\": \"CP Employer Address ZIP\"\r\n            },\r\n            \"workShift\": \"8 hours a day\",\r\n            \"country\": \"US\",\r\n            \"monthlySalary\": 5000,\r\n            \"usualOccupation\": \"Plant Safety Coordinator\"\r\n        },\r\n        \"currentMarriageInfo\": {\r\n            \"spouseLastName\": \"Bryant\",\r\n            \"spouseFirstName\": \"Vanessa\",\r\n            \"spouseMiddleName\": \"Cornejo\",\r\n            \"spouseSuffix\": \"\",\r\n            \"dateOfMarriage\": \"2001-04-18\",\r\n            \"marriageCity\": \"Los Angeles\",\r\n            \"marriageState\": \"CA\",\r\n            \"dateOfDivorce\": \"2020-01-26\"\r\n        }\r\n    },\r\n    \"dependentChildren\": [\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"000000003\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"0000000003\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Natalia\",\r\n                \"dateOfBirth\": \"2003-01-19\",\r\n                \"middleName\": \"Diamante\",\r\n                \"suffix\": \"Jr.\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"Black Mamba JR\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Los Angeles\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 9,\r\n                \"weight_lbs\": 115,\r\n                \"hairColor\": \"BN\"\r\n            },\r\n            \"paternityEstablishedIndicator\": \"N\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName\": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"N\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        },\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"247425280\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"5987841144\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Gianna \",\r\n                \"dateOfBirth\": \"2006-05-01\",\r\n                \"middleName\": \"Maria-Onore\",\r\n                \"suffix\": \"\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Orange County\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 5\r\n            },\r\n            \"paternityEstablishedIndicator\": \"Y\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName \": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\",\r\n                \"dateOfMarriage\": \"2001-04-18\",\r\n                \"marriageCity\": \"Los Angeles\",\r\n                \"marriageState\": \"CA\",\r\n                \"dateOfDivorce\": \"2020-01-26\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"Y\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        }\r\n    ],\r\n    \"nonCustodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000004\"\r\n            },\r\n            {\r\n                \"type\": \"PACSS_MEMBER_ID\",\r\n                \"value\": \"0000000004\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Bryant\",\r\n            \"firstName\": \"Pamela\",\r\n            \"dateOfBirth\": \"1954-08-03\",\r\n            \"middleName\": \"Cox\",\r\n            \"suffix\": \"\",\r\n            \"alias\": \"\",\r\n            \"nickName\": \"\",\r\n            \"maidenName\": \"Adele Anderson\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Los Angeles\",\r\n            \"stateOfbirth\": \"CA\",\r\n            \"gender\": \"F\",\r\n            \"race\": \"02\",\r\n            \"currentMaritalStatus\": \"X\",\r\n            \"height_feet\": 5,\r\n            \"height_inches\": 5,\r\n            \"weight_lbs\": 156\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"addressType\": \"HOME\",\r\n            \"county\": \"10\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/referrald",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"referrald"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MES-16283 - 429 Too Many Requests - Change the account level throttling rate and burst requests to 0 in API Gateway",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 429\", function () {",
+							"    pm.response.to.have.status(429);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body('{\"message\": \"Too Many Requests\", \"type\":THROTTLED, \"statusCode\": \\'429\\', \"hint\": \"Please fix and resubmit\"}');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"referralRecord\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"CURAM_REFERRAL_ID\",\r\n                \"value\": \"0000000031\"\r\n            }\r\n        ],\r\n        \"dateReferredtoPacss\": \"2022-10-08\",\r\n        \"referralType\": \"I\",\r\n        \"assignmentOfRightsDate\": \"2022-11-30\"\r\n    },\r\n    \"custodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000002\"\r\n            },\r\n            {\r\n                \"type\": \"MEDICAID_ID\",\r\n                \"value\": \"0000000002\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Khan\",\r\n            \"firstName\": \"Ramez\",\r\n            \"dateOfBirth\": \"1978-08-23\",\r\n            \"middleName\": \"Airkhan\",\r\n            \"suffix\": \"Sr.\",\r\n            \"alias\": \"NONE\",\r\n            \"nickName\": \"Black Mamba\",\r\n            \"maidenName\": \"NONE\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Philadelphia\",\r\n            \"stateOfbirth\": \"PA\",\r\n            \"gender\": \"M\"\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"county\": \"10\",\r\n            \"addressType\": \"HOME\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        },\r\n        \"employmentInfo\": {\r\n            \"employerName\": \"Sonoco\",\r\n            \"employerAddress\": {\r\n                \"addressLine1\": \"CP Employer Address Line1\",\r\n                \"city\": \"CP Employer Address City\",\r\n                \"state\": \"CP Employer Address State\",\r\n                \"zip\": \"CP Employer Address ZIP\"\r\n            },\r\n            \"workShift\": \"8 hours a day\",\r\n            \"country\": \"US\",\r\n            \"monthlySalary\": 5000,\r\n            \"usualOccupation\": \"Plant Safety Coordinator\"\r\n        },\r\n        \"currentMarriageInfo\": {\r\n            \"spouseLastName\": \"Bryant\",\r\n            \"spouseFirstName\": \"Vanessa\",\r\n            \"spouseMiddleName\": \"Cornejo\",\r\n            \"spouseSuffix\": \"\",\r\n            \"dateOfMarriage\": \"2001-04-18\",\r\n            \"marriageCity\": \"Los Angeles\",\r\n            \"marriageState\": \"CA\",\r\n            \"dateOfDivorce\": \"2020-01-26\"\r\n        }\r\n    },\r\n    \"dependentChildren\": [\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"000000003\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"0000000003\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Natalia\",\r\n                \"dateOfBirth\": \"2003-01-19\",\r\n                \"middleName\": \"Diamante\",\r\n                \"suffix\": \"Jr.\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"Black Mamba JR\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Los Angeles\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 9,\r\n                \"weight_lbs\": 115,\r\n                \"hairColor\": \"BN\"\r\n            },\r\n            \"paternityEstablishedIndicator\": \"N\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName\": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"N\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        },\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"247425280\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"5987841144\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Gianna \",\r\n                \"dateOfBirth\": \"2006-05-01\",\r\n                \"middleName\": \"Maria-Onore\",\r\n                \"suffix\": \"\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Orange County\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 5\r\n            },\r\n            \"paternityEstablishedIndicator\": \"Y\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName \": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\",\r\n                \"dateOfMarriage\": \"2001-04-18\",\r\n                \"marriageCity\": \"Los Angeles\",\r\n                \"marriageState\": \"CA\",\r\n                \"dateOfDivorce\": \"2020-01-26\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"Y\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        }\r\n    ],\r\n    \"nonCustodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000004\"\r\n            },\r\n            {\r\n                \"type\": \"PACSS_MEMBER_ID\",\r\n                \"value\": \"0000000004\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Bryant\",\r\n            \"firstName\": \"Pamela\",\r\n            \"dateOfBirth\": \"1954-08-03\",\r\n            \"middleName\": \"Cox\",\r\n            \"suffix\": \"\",\r\n            \"alias\": \"\",\r\n            \"nickName\": \"\",\r\n            \"maidenName\": \"Adele Anderson\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Los Angeles\",\r\n            \"stateOfbirth\": \"CA\",\r\n            \"gender\": \"F\",\r\n            \"race\": \"02\",\r\n            \"currentMaritalStatus\": \"X\",\r\n            \"height_feet\": 5,\r\n            \"height_inches\": 5,\r\n            \"weight_lbs\": 156\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"addressType\": \"HOME\",\r\n            \"county\": \"10\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/referral",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"referral"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MES-16283 - 500 Internal Server Error - Edit \"MES_DSS_Inbound_Topic\" key in the env. variables",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});",
+							"",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body('\"Internal server error, please resubmit for referral record id : 0000000031\"');",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"referralRecord\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"CURAM_REFERRAL_ID\",\r\n                \"value\": \"0000000031\"\r\n            }\r\n        ],\r\n        \"dateReferredtoPacss\": \"2022-10-08\",\r\n        \"referralType\": \"I\",\r\n        \"assignmentOfRightsDate\": \"2022-11-30\"\r\n    },\r\n    \"custodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000002\"\r\n            },\r\n            {\r\n                \"type\": \"MEDICAID_ID\",\r\n                \"value\": \"0000000002\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Khan\",\r\n            \"firstName\": \"Ramez\",\r\n            \"dateOfBirth\": \"1978-08-23\",\r\n            \"middleName\": \"Airkhan\",\r\n            \"suffix\": \"Sr.\",\r\n            \"alias\": \"NONE\",\r\n            \"nickName\": \"Black Mamba\",\r\n            \"maidenName\": \"NONE\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Philadelphia\",\r\n            \"stateOfbirth\": \"PA\",\r\n            \"gender\": \"M\"\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"county\": \"10\",\r\n            \"addressType\": \"HOME\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        },\r\n        \"employmentInfo\": {\r\n            \"employerName\": \"Sonoco\",\r\n            \"employerAddress\": {\r\n                \"addressLine1\": \"CP Employer Address Line1\",\r\n                \"city\": \"CP Employer Address City\",\r\n                \"state\": \"CP Employer Address State\",\r\n                \"zip\": \"CP Employer Address ZIP\"\r\n            },\r\n            \"workShift\": \"8 hours a day\",\r\n            \"country\": \"US\",\r\n            \"monthlySalary\": 5000,\r\n            \"usualOccupation\": \"Plant Safety Coordinator\"\r\n        },\r\n        \"currentMarriageInfo\": {\r\n            \"spouseLastName\": \"Bryant\",\r\n            \"spouseFirstName\": \"Vanessa\",\r\n            \"spouseMiddleName\": \"Cornejo\",\r\n            \"spouseSuffix\": \"\",\r\n            \"dateOfMarriage\": \"2001-04-18\",\r\n            \"marriageCity\": \"Los Angeles\",\r\n            \"marriageState\": \"CA\",\r\n            \"dateOfDivorce\": \"2020-01-26\"\r\n        }\r\n    },\r\n    \"dependentChildren\": [\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"000000003\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"0000000003\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Natalia\",\r\n                \"dateOfBirth\": \"2003-01-19\",\r\n                \"middleName\": \"Diamante\",\r\n                \"suffix\": \"Jr.\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"Black Mamba JR\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Los Angeles\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 9,\r\n                \"weight_lbs\": 115,\r\n                \"hairColor\": \"BN\"\r\n            },\r\n            \"paternityEstablishedIndicator\": \"N\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName\": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"N\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        },\r\n        {\r\n            \"identifiers\": [\r\n                {\r\n                    \"type\": \"SSN\",\r\n                    \"value\": \"247425280\"\r\n                },\r\n                {\r\n                    \"type\": \"MEDICAID_ID\",\r\n                    \"value\": \"5987841144\"\r\n                }\r\n            ],\r\n            \"person\": {\r\n                \"lastName\": \"Bryant\",\r\n                \"firstName\": \"Gianna \",\r\n                \"dateOfBirth\": \"2006-05-01\",\r\n                \"middleName\": \"Maria-Onore\",\r\n                \"suffix\": \"\",\r\n                \"alias\": \"\",\r\n                \"nickName\": \"\",\r\n                \"maidenName\": \"\",\r\n                \"countryOfBirth\": \"US\",\r\n                \"cityOfbirth\": \"Orange County\",\r\n                \"stateOfbirth\": \"CA\",\r\n                \"gender\": \"F\",\r\n                \"race\": \"02\",\r\n                \"currentMaritalStatus\": \"S\",\r\n                \"height_feet\": 5,\r\n                \"height_inches\": 5\r\n            },\r\n            \"paternityEstablishedIndicator\": \"Y\",\r\n            \"parentMarriageInfoAtChildBirth\": {\r\n                \"spouseLastName \": \"Bryant\",\r\n                \"spouseFirstName\": \"Vanessa\",\r\n                \"spouseMiddleName\": \"Cornejo\",\r\n                \"spouseSuffix\": \"\",\r\n                \"dateOfMarriage\": \"2001-04-18\",\r\n                \"marriageCity\": \"Los Angeles\",\r\n                \"marriageState\": \"CA\",\r\n                \"dateOfDivorce\": \"2020-01-26\"\r\n            },\r\n            \"parentsRelationshipAtChildsBirth\": \"M\",\r\n            \"custodialParentsRelationshiptoDependentChild\": \"MTH\",\r\n            \"childsLivingStatusWithCustodialParent\": \"Y\",\r\n            \"medicaidAvailability\": {\r\n                \"eligibilityStartDate\": \"2020-05-09\",\r\n                \"eligibilityEndDate\": \"2022-08-25\"\r\n            }\r\n        }\r\n    ],\r\n    \"nonCustodialParent\": {\r\n        \"identifiers\": [\r\n            {\r\n                \"type\": \"SSN\",\r\n                \"value\": \"000000004\"\r\n            },\r\n            {\r\n                \"type\": \"PACSS_MEMBER_ID\",\r\n                \"value\": \"0000000004\"\r\n            }\r\n        ],\r\n        \"person\": {\r\n            \"lastName\": \"Bryant\",\r\n            \"firstName\": \"Pamela\",\r\n            \"dateOfBirth\": \"1954-08-03\",\r\n            \"middleName\": \"Cox\",\r\n            \"suffix\": \"\",\r\n            \"alias\": \"\",\r\n            \"nickName\": \"\",\r\n            \"maidenName\": \"Adele Anderson\",\r\n            \"countryOfBirth\": \"US\",\r\n            \"cityOfbirth\": \"Los Angeles\",\r\n            \"stateOfbirth\": \"CA\",\r\n            \"gender\": \"F\",\r\n            \"race\": \"02\",\r\n            \"currentMaritalStatus\": \"X\",\r\n            \"height_feet\": 5,\r\n            \"height_inches\": 5,\r\n            \"weight_lbs\": 156\r\n        },\r\n        \"address\": {\r\n            \"addressLine1\": \"439 Lesesne St\",\r\n            \"city\": \"Charleston\",\r\n            \"state\": \"SC\",\r\n            \"zip\": \"29492\",\r\n            \"addressType\": \"HOME\",\r\n            \"county\": \"10\"\r\n        },\r\n        \"contactNumber\": {\r\n            \"value\": \"9999999999\",\r\n            \"type\": \"MOBILE\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/referral",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"referral"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MES-16283 - 504 Gateway Timeout- Remove the application/xml from the Requst Body in the Resources",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 504\", function () {",
+							"    pm.response.to.have.status(504);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body('{\"message\":  \"Too Many Requests\", \"type\":Too Many Requests, \"statusCode\": \\'429\\', \"hint\": \"Please fix and resubmit\"}');",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\r\n<root>\r\n  <referralRecord>\r\n    <identifiers>\r\n      <type>CURAM_REFERRAL_ID</type>\r\n      <value>0000000010</value>\r\n    </identifiers>\r\n    <dateReferredtoPacss>2019-10-03</dateReferredtoPacss>\r\n    <referralType>I</referralType>\r\n    <assignmentOfRightsDate>2019-11-30</assignmentOfRightsDate>\r\n  </referralRecord>\r\n  <custodialParent>\r\n    <identifiers>\r\n      <type>SSN</type>\r\n      <value>251999294</value>\r\n    </identifiers>\r\n    <identifiers>\r\n      <type>MEDICAID_ID</type>\r\n      <value>7354330480</value>\r\n    </identifiers>\r\n    <person>\r\n      <lastName>Bryant</lastName>\r\n      <firstName>Ramez</firstName>\r\n      <dateOfBirth>1978-08-23</dateOfBirth>\r\n      <middleName>Bean</middleName>\r\n      <suffix>Sr.</suffix>\r\n      <alias>NONE</alias>\r\n      <nickName>Black Mamba</nickName>\r\n      <maidenName>NONE</maidenName>\r\n      <countryOfBirth>US</countryOfBirth>\r\n      <cityOfbirth>Philadelphia</cityOfbirth>\r\n      <stateOfbirth>PA</stateOfbirth>\r\n      <gender>M</gender>\r\n    </person>\r\n    <address>\r\n      <addressLine1>439 Lesesne St</addressLine1>\r\n      <city>Charleston</city>\r\n      <state>SC</state>\r\n      <zip>29492</zip>\r\n      <county>10</county>\r\n      <addressType>HOME</addressType>\r\n    </address>\r\n    <contactNumber>\r\n      <value>9999999999</value>\r\n      <type>MOBILE</type>\r\n    </contactNumber>\r\n    <employmentInfo>\r\n      <employerName>Sonoco</employerName>\r\n      <employerAddress>\r\n        <addressLine1>CP Employer Address Line1</addressLine1>\r\n        <city>CP Employer Address City</city>\r\n        <state>CP Employer Address State</state>\r\n        <zip>CP Employer Address ZIP</zip>\r\n      </employerAddress>\r\n      <workShift>8 hours a day</workShift>\r\n      <country>US</country>\r\n      <monthlySalary>5000</monthlySalary>\r\n      <usualOccupation>Plant Safety Coordinator</usualOccupation>\r\n    </employmentInfo>\r\n    <currentMarriageInfo>\r\n      <spouseLastName>Bryant</spouseLastName>\r\n      <spouseFirstName>Vanessa</spouseFirstName>\r\n      <spouseMiddleName>Cornejo</spouseMiddleName>\r\n      <spouseSuffix></spouseSuffix>\r\n      <dateOfMarriage>2001-04-18</dateOfMarriage>\r\n      <marriageCity>Los Angeles</marriageCity>\r\n      <marriageState>CA</marriageState>\r\n      <dateOfDivorce>2020-01-26</dateOfDivorce>\r\n    </currentMarriageInfo>\r\n  </custodialParent>\r\n  <dependentChildren>\r\n    <identifiers>\r\n      <type>SSN</type>\r\n      <value>251608663</value>\r\n    </identifiers>\r\n    <identifiers>\r\n      <type>MEDICAID_ID</type>\r\n      <value>7003753184</value>\r\n    </identifiers>\r\n    <person>\r\n      <lastName>Bryant</lastName>\r\n      <firstName>Natalia</firstName>\r\n      <dateOfBirth>2003-01-19</dateOfBirth>\r\n      <middleName>Diamante</middleName>\r\n      <suffix>Jr.</suffix>\r\n      <alias></alias>\r\n      <nickName>Black Mamba JR</nickName>\r\n      <maidenName></maidenName>\r\n      <countryOfBirth>US</countryOfBirth>\r\n      <cityOfbirth>Los Angeles</cityOfbirth>\r\n      <stateOfbirth>CA</stateOfbirth>\r\n      <gender>F</gender>\r\n      <race>02</race>\r\n      <currentMaritalStatus>S</currentMaritalStatus>\r\n      <height_feet>5</height_feet>\r\n      <height_inches>9</height_inches>\r\n      <weight_lbs>115</weight_lbs>\r\n      <hairColor>BN</hairColor>\r\n    </person>\r\n    <paternityEstablishedIndicator>N</paternityEstablishedIndicator>\r\n    <parentMarriageInfoAtChildBirth>\r\n      <spouseLastName>Bryant</spouseLastName>\r\n      <spouseFirstName>Vanessa</spouseFirstName>\r\n      <spouseMiddleName>Cornejo</spouseMiddleName>\r\n      <spouseSuffix></spouseSuffix>\r\n    </parentMarriageInfoAtChildBirth>\r\n    <parentsRelationshipAtChildsBirth>M</parentsRelationshipAtChildsBirth>\r\n    <custodialParentsRelationshiptoDependentChild>MTH</custodialParentsRelationshiptoDependentChild>\r\n    <childsLivingStatusWithCustodialParent>N</childsLivingStatusWithCustodialParent>\r\n    <medicaidAvailability>\r\n      <eligibilityStartDate>2020-05-09</eligibilityStartDate>\r\n      <eligibilityEndDate>2022-08-25</eligibilityEndDate>\r\n    </medicaidAvailability>\r\n  </dependentChildren>\r\n  <dependentChildren>\r\n    <identifiers>\r\n      <type>SSN</type>\r\n      <value>247425280</value>\r\n    </identifiers>\r\n    <identifiers>\r\n      <type>MEDICAID_ID</type>\r\n      <value>5987841144</value>\r\n    </identifiers>\r\n    <person>\r\n      <lastName>Bryant</lastName>\r\n      <firstName>Gianna </firstName>\r\n      <dateOfBirth>2006-05-01</dateOfBirth>\r\n      <middleName>Maria-Onore</middleName>\r\n      <suffix></suffix>\r\n      <alias></alias>\r\n      <nickName></nickName>\r\n      <maidenName></maidenName>\r\n      <countryOfBirth>US</countryOfBirth>\r\n      <cityOfbirth>Orange County</cityOfbirth>\r\n      <stateOfbirth>CA</stateOfbirth>\r\n      <gender>F</gender>\r\n      <race>02</race>\r\n      <currentMaritalStatus>S</currentMaritalStatus>\r\n      <height_feet>5</height_feet>\r\n      <height_inches>5</height_inches>\r\n    </person>\r\n    <paternityEstablishedIndicator>Y</paternityEstablishedIndicator>\r\n    <parentMarriageInfoAtChildBirth>\r\n      <spouseFirstName>Vanessa</spouseFirstName>\r\n      <spouseMiddleName>Cornejo</spouseMiddleName>\r\n      <spouseSuffix></spouseSuffix>\r\n      <dateOfMarriage>2001-04-18</dateOfMarriage>\r\n      <marriageCity>Los Angeles</marriageCity>\r\n      <marriageState>CA</marriageState>\r\n      <dateOfDivorce>2020-01-26</dateOfDivorce>\r\n      <spouseLastName>Bryant</spouseLastName>\r\n    </parentMarriageInfoAtChildBirth>\r\n    <parentsRelationshipAtChildsBirth>M</parentsRelationshipAtChildsBirth>\r\n    <custodialParentsRelationshiptoDependentChild>MTH</custodialParentsRelationshiptoDependentChild>\r\n    <childsLivingStatusWithCustodialParent>Y</childsLivingStatusWithCustodialParent>\r\n    <medicaidAvailability>\r\n      <eligibilityStartDate>2020-05-09</eligibilityStartDate>\r\n      <eligibilityEndDate>2022-08-25</eligibilityEndDate>\r\n    </medicaidAvailability>\r\n  </dependentChildren>\r\n  <nonCustodialParent>\r\n    <identifiers>\r\n      <type>SSN</type>\r\n      <value>248824238</value>\r\n    </identifiers>\r\n    <identifiers>\r\n      <type>PACSS_MEMBER_ID</type>\r\n      <value>8201301029</value>\r\n    </identifiers>\r\n    <person>\r\n      <lastName>Bryant</lastName>\r\n      <firstName>Pamela</firstName>\r\n      <dateOfBirth>1954-08-03</dateOfBirth>\r\n      <middleName>Cox</middleName>\r\n      <suffix></suffix>\r\n      <alias></alias>\r\n      <nickName></nickName>\r\n      <maidenName>Adele Anderson</maidenName>\r\n      <countryOfBirth>US</countryOfBirth>\r\n      <cityOfbirth>Los Angeles</cityOfbirth>\r\n      <stateOfbirth>CA</stateOfbirth>\r\n      <gender>F</gender>\r\n      <race>02</race>\r\n      <currentMaritalStatus>X</currentMaritalStatus>\r\n      <height_feet>5</height_feet>\r\n      <height_inches>5</height_inches>\r\n      <weight_lbs>156</weight_lbs>\r\n    </person>\r\n    <address>\r\n      <addressLine1>439 Lesesne St</addressLine1>\r\n      <city>Charleston</city>\r\n      <state>SC</state>\r\n      <zip>29492</zip>\r\n      <addressType>HOME</addressType>\r\n      <county>10</county>\r\n    </address>\r\n    <contactNumber>\r\n      <value>9999999999</value>\r\n      <type>MOBILE</type>\r\n    </contactNumber>\r\n  </nonCustodialParent>\r\n</root>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/referral",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"referral"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "1q36gphgamcgijg7geqoemt5n0upctcodcb92slfht8k9l2tsa0t",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "6s5qq0f27alv5go0ku01kr9e1s",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://mes-dss-domain-main.auth.us-east-1.amazoncognito.com/oauth2/token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
