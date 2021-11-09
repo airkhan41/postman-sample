@@ -1,19 +1,12 @@
 version: 0.2
-
+node_js:
+  - 17.0.1
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: 17.0.1
-    commands: #https://learning.getpostman.com/docs/postman/collection-runs/command-line-integration-with-newman/
+  pre_build:
+    commands:
       - npm install -g newman
       - npm install -g newman-reporter-htmlextra
-#phases:
-  #pre_build:
-    #commands:
-      #- npm install -g newman
-     # - npm install -g newman-reporter-htmlextra
-
   build:
     commands:
       ##- newman run -r html,cli sample_service.postman_collection --reporter-htmlextra-export report.html
