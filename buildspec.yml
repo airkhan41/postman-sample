@@ -11,7 +11,7 @@ phases:
       - npm install -g newman-reporter-htmlextra
   build:
     commands:
-      - newman run -r html,cli sample_service.postman_collection --reporter-htmlextra-export report.html
+      - newman run -r htmlextra,cli sample_service.postman_collection --reporter-htmlextra-export report.html
       #- newman run DSS_API_Status_Testing.postman_collection.json -r htmlextra --reporter-htmlextra-export report.html
 
 artifacts:
