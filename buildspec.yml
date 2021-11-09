@@ -1,6 +1,6 @@
 version: 0.2
 node_js:
-  - '7'
+  - '10'
 
 phases:
   pre_build:
