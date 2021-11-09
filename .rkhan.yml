@@ -3,7 +3,7 @@ node_js:
 - '6'
 
 before_script:
-  - npm install -g newman-reporter-htmlextra
+  - npm install -g newman
 
 script:
   - newman run sample_service.postman_collection
