@@ -1,8 +1,6 @@
-#version: 0.2
+version: 0.2
 node_js:
-  - '14'
-npm:
-  - '7'
+  - '17.0.1'
 
 phases:
   pre_build:
