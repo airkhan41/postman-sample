@@ -3,11 +3,10 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - npm install newman --global
+      - npm install -g newman-reporter-htmlextra
   build:
     commands:
       - newman run -r html,cli sample_service.postman_collection --reporter-html-export report.html
-
 artifacts:
   files:
     - report.html
